@@ -17,8 +17,8 @@
 
 ## Fetch Data Management
 
-> ### `React Query`
->
+### React Query
+
 > Performant and powerful data synchronization for React>
 > Official Doc >>> Open [https://react-query.tanstack.com/](https://react-query.tanstack.com/)
 
