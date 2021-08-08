@@ -1,0 +1,14 @@
+.root {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    width: 96vw;
+    border-bottom: 2px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
