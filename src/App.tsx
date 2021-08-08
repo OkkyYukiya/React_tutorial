@@ -1,17 +1,6 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Home } from './page'
+import { VFC } from 'react'
+import { RoutePage } from 'Route'
 
-const App: React.VFC = () => {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  )
-}
+const App: VFC = () => <RoutePage />
 
 export default App

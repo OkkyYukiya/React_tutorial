@@ -10,16 +10,70 @@ import {
   BottomNavigation,
   BottomNavigationAction,
 } from '@material-ui/core'
+import { useHistory, useLocation } from 'react-router-dom'
 
 export const Footer: VFC = () => {
+  const history = useHistory()
+  const location = useLocation()
+
+  const changePath = (pathName: string) => {
+    history.push(pathName)
+  }
+
   return (
     <Box className={styles.root}>
       <Divider />
       <BottomNavigation>
-        <BottomNavigationAction icon={<HomeIcon fontSize="large" />} />
-        <BottomNavigationAction icon={<LocationOnIcon fontSize="large" />} />
-        <BottomNavigationAction icon={<SearchIcon fontSize="large" />} />
-        <BottomNavigationAction icon={<AccountCircleIcon fontSize="large" />} />
+        <BottomNavigationAction
+          onClick={() => changePath('/')}
+          icon={
+            <HomeIcon
+              className={
+                location.pathname === '/' ? styles.activeicon : styles.icon
+              }
+              fontSize="large"
+            />
+          }
+        />
+        <BottomNavigationAction
+          onClick={() => changePath('/location')}
+          icon={
+            <LocationOnIcon
+              className={
+                location.pathname === '/location'
+                  ? styles.activeicon
+                  : styles.icon
+              }
+              fontSize="large"
+            />
+          }
+        />
+        <BottomNavigationAction
+          onClick={() => changePath('/search')}
+          icon={
+            <SearchIcon
+              className={
+                location.pathname === '/search'
+                  ? styles.activeicon
+                  : styles.icon
+              }
+              fontSize="large"
+            />
+          }
+        />
+        <BottomNavigationAction
+          onClick={() => changePath('/profile')}
+          icon={
+            <AccountCircleIcon
+              className={
+                location.pathname === '/profile'
+                  ? styles.activeicon
+                  : styles.icon
+              }
+              fontSize="large"
+            />
+          }
+        />
       </BottomNavigation>
     </Box>
   )

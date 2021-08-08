@@ -1,9 +1,9 @@
 import { VFC } from 'react'
 
-export const Home: VFC = () => {
+export const Search: VFC = () => {
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1>HOME</h1>
+      <h1>Search</h1>
     </div>
   )
 }
