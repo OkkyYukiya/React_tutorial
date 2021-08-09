@@ -1,43 +1,6 @@
 import { VFC } from 'react'
-import Badge from '@material-ui/core/Badge'
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
-import {
-  Theme,
-  makeStyles,
-  withStyles,
-  createStyles,
-} from '@material-ui/core/styles'
-
-const StyledBadge = withStyles((theme: Theme) =>
-  createStyles({
-    badge: {
-      backgroundColor: '#44b700',
-      color: '#44b700',
-      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-      '&::after': {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        borderRadius: '50%',
-        animation: '$ripple 1.2s infinite ease-in-out',
-        border: '1px solid currentColor',
-        content: '""',
-      },
-    },
-    '@keyframes ripple': {
-      '0%': {
-        transform: 'scale(.8)',
-        opacity: 1,
-      },
-      '100%': {
-        transform: 'scale(2.4)',
-        opacity: 0,
-      },
-    },
-  })
-)(Badge)
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -47,31 +10,27 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(1),
       },
     },
-    avatar: {
+    small: {
+      width: theme.spacing(3),
+      height: theme.spacing(3),
+    },
+    large: {
+      width: theme.spacing(5),
+      height: theme.spacing(5),
       border: '1px solid grey',
     },
   })
 )
 
 interface Props {
-  image: string
+  photoUrl: string
 }
 
-export const ActiveAvatar: VFC<Props> = ({ image }) => {
+export const ProfileAvatar: VFC<Props> = ({ photoUrl }) => {
   const classes = useStyles()
-
   return (
     <div className={classes.root}>
-      <StyledBadge
-        overlap="circular"
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
-        }}
-        variant="dot"
-      >
-        <Avatar className={classes.avatar} alt="Remy Sharp" src={image} />
-      </StyledBadge>
+      <Avatar className={classes.large} alt="Remy Sharp" src={photoUrl} />
     </div>
   )
 }

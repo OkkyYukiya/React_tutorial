@@ -5,6 +5,7 @@ import { Location } from 'page/location'
 import { Layout } from 'ui/Layout'
 import { Profile } from 'page/profile'
 import { Search } from 'page/search'
+import { DemoPage } from 'demo/DemoPage'
 
 export const RoutePage: VFC = () => {
   return (
@@ -22,6 +23,9 @@ export const RoutePage: VFC = () => {
           </Route>
           <Route exact path="/profile">
             <Profile />
+          </Route>
+          <Route exact path="/demo">
+            <DemoPage />
           </Route>
         </Switch>
       </Layout>

@@ -3,7 +3,7 @@ import { Post } from 'features/posts/Post'
 import { PostDetail } from 'features/posts/PostDetail'
 import dummyPosts from 'dummy/dummyPosts.json'
 
-export const Home: VFC = () => {
+export const DemoPage: VFC = () => {
   const posts = dummyPosts
   return (
     <Post>

@@ -1,0 +1,54 @@
+.root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .top__component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .top__left {
+      display: flex;
+      align-items: center;
+    }
+
+    .top__right {
+      display: flex;
+      align-items: center;
+      .datebox {
+        .date {
+          font-size: 8px;
+          margin-left: 8px;
+          color: rgb(14, 14, 14);
+        }
+      }
+    }
+  }
+
+  .middle__component {
+    display: flex;
+    flex-direction: column;
+
+    .main__image {
+      width: 100%;
+      border-radius: 16px;
+    }
+  }
+
+  .under__component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon__count {
+      display: flex;
+      align-items: flex-end;
+      .count {
+        color: grey;
+        font-size: 14px;
+        margin-left: 8px;
+      }
+    }
+  }
+}
